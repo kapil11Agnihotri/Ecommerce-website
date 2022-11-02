@@ -10,7 +10,7 @@ const Header = (props) => {
                 <li>Home</li>
                 <li>Store</li>
                 <li>About</li>
-               <li><CartButton/></li>
+               <li onClick={props.onShowCart}><CartButton/></li>
             </ul>
           <h1>The Generics</h1>
         </header>
