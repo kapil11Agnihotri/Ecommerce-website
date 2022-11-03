@@ -21,3 +21,31 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/Components/Cart/Cart.css
+src/Components/Cart/Cart.js
+src/Components/Cart/CartButton.css
+src/Components/Cart/CartButton.js
+src/Components/Layout/Header.js
+src/Components/Layout/Header.module.css
+src/Components/Layout/MusicList.css
+src/Components/Layout/MusicList.js
+src/Components/Layout/img/Album 1.png
+src/Components/Layout/img/Album 2.png
+src/Components/Layout/img/Album 3.png
+src/Components/Layout/img/Album 4.png
+src/Components/UI/Model.js
+src/Components/UI/Model.module.css
+src/Components/Cart/Cart.css
+src/Components/Cart/Cart.js
+src/Components/Cart/CartButton.css
+src/Components/Cart/CartButton.js
+src/Components/Layout/Header.js
+src/Components/Layout/Header.module.css
+src/Components/Layout/MusicList.css
+src/Components/Layout/MusicList.js
+src/Components/Layout/img/Album 1.png
+src/Components/Layout/img/Album 2.png
+src/Components/Layout/img/Album 3.png
+src/Components/Layout/img/Album 4.png
+src/Components/UI/Model.js
+src/Components/UI/Model.module.css
