@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 200;
+    justify-content: center;
+    list-style-type: none;
+    border-bottom: 0.1rem solid white;
+    position: fixed;
+    top: 0%;
+    background: black;
+    width: 100%;
+    z-index: 1;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .shopping-card {
+    justify-content: space-between;
+    background-color: #61dafb;
+    padding: 20px 30px;
+  }
+  
+  .product-item {
+    padding: 20px;
+  }
