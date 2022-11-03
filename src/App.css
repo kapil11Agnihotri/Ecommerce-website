@@ -19,10 +19,20 @@ header{
   
   .shopping-card {
     justify-content: space-between;
-    background-color: #61dafb;
+    color: white;
+    background-color:black;
     padding: 20px 30px;
   }
   
   .product-item {
     padding: 20px;
+  }
+  .generics{
+    font-size: 60px;
+    text-align: center;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  flex-basis: 65%;
+  color:white;
+  background: grey;
   }

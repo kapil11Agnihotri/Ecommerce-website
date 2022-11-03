@@ -1,0 +1,13 @@
+
+.cart{
+background:white;
+    width: 50%;
+    height: 445px;
+    z-index: auto;
+    position: relative;
+    left: 50%;
+    flex-basis: 60%;
+}
+.button{
+    text-align: center
+}

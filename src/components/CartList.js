@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import "../App.css";
+import {Link} from 'react-router-dom'
+import classes from './Cart.module.css'
+import { Home } from "./Store";
+function CartList(props) {
 
-function CartList({ cart }) {
+
   const [CART, setCART] = useState([]);
 
   useEffect(() => {
-    setCART(cart);
-  }, [cart]);
+    setCART(props.cart);
+  }, [props.cart]);
 
   return (
-    <div>
+    <div className={classes.cart}>
       {CART?.map((cartItem, cartindex) => {
         return (
           <div>
-            <img src={cartItem.url} width={40} alt='color'/>
+            <img src={cartItem.url} width={40} alt="color" />
             <span> {cartItem.title} </span>
             <button
               onClick={() => {
@@ -56,6 +60,10 @@ function CartList({ cart }) {
           0
         )}
       </p>
+      <div>
+      <Link to="/"> <button className="button" onClick={() => props.handleShow(false)}>Close</button></Link>
+        
+      </div>
     </div>
   );
 }
