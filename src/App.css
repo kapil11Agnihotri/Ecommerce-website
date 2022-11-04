@@ -20,7 +20,7 @@ header{
   .shopping-card {
     justify-content: space-between;
     color: white;
-    background-color:black;
+    background-color:rgb(200, 148, 179);
     padding: 20px 30px;
   }
   

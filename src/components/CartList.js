@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import {Link} from 'react-router-dom'
 import classes from './Cart.module.css'
-import { Home } from "./Store";
+import Header from "./Header";
+import Footer from "./Footer";
 function CartList(props) {
 
 
@@ -12,7 +13,8 @@ function CartList(props) {
     setCART(props.cart);
   }, [props.cart]);
 
-  return (
+  return (<>
+  <Header/>
     <div className={classes.cart}>
       {CART?.map((cartItem, cartindex) => {
         return (
@@ -61,10 +63,12 @@ function CartList(props) {
         )}
       </p>
       <div>
-      <Link to="/"> <button className="button" onClick={() => props.handleShow(false)}>Close</button></Link>
+      <Link to="/STORE"><button>Close</button></Link>
         
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

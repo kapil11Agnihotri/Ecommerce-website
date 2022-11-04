@@ -1,11 +1,14 @@
 import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
+import './About.css'
+
+
 const About = () => {
   return (
     <>
     <Header/>
-    <div><h1>About</h1></div>
+    <div className="about"><h1 className="h1">About</h1>
       <p>
         Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
         sorrows, hates no prosecutors will unfold in the enduring of which were
@@ -28,6 +31,7 @@ const About = () => {
         take the hardships of the life of harsh condemn, we are accusing him?
         Him whom something large cisterns.
       </p>
+      </div>
       <Footer/>
     </>
   );
