@@ -7,26 +7,30 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import About from "./components/Pages/About";
 import ContactUs from "./components/Pages/ContactUs";
-
+import ProductDetails from "./components/Pages/productDetails";
 
 function App() {
   const [product, setProduct] = useState([
     {
+      key:1,
       title: "Colors",
       price: 100,
       url: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
     },
     {
+      key:2,
       title: "Black and white Colors",
       price: 50,
       url: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
     },
     {
+      key:3,
       title: "Yellow and Black Colors",
       price: 70,
       url: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
     },
     {
+      key:4,
       title: "Blue Color",
       price: 100,
       url: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
@@ -77,6 +81,7 @@ function App() {
           />
           <Route path="/About" element={<About />} />
           <Route path="/Contact-Us"  element={<ContactUs onAddDetails={contectFormHandler}/>}/>
+          <Route path="/Store/:productId" element={<ProductDetails product={product} />}/>
         </Routes>
       </BrowserRouter>
     </>
