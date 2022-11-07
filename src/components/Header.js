@@ -19,6 +19,10 @@ function Header(props) {
           {" "}
           <div>ABOUT</div>
         </Link>
+        <Link to="/Auth">
+        {''}
+        <div>Login</div>
+        </Link>
         <Link to="/Contact-Us">
           {" "}
           <div>Contact Us</div>

@@ -4,11 +4,36 @@ import ProductList from './ProductList';
 
 
 import Footer from "./Footer";
+function isPresent(cart,data){
+  let productId=data.key;
+  for(let i=0;i<cart.length;i++){
+    if(cart[i].key===productId)
+    return {
+      present:true,
+      kahPeMila:i,
+    }
+  }
+  return {
+    present:false,
+  };
+}
 export const Store = (props) => {
     let {setCart,cart}=props;
   
     const addToCart = (data) => {
-        setCart([...cart, { ...data, quantity: 1 }]);
+      console.log("data",data);
+      console.log(("cart",cart))
+
+      let obj=isPresent(cart,data);
+      if(obj.present){
+        cart[obj.kahPeMila].quantity+=1;
+        setCart(cart);
+      }
+
+       else{
+          setCart([...cart, { ...data, quantity: 1 }]);
+        }
+        
       };
 
     const [product, setProduct] = useState([
@@ -46,6 +71,7 @@ export const Store = (props) => {
     <Header  cart={props.count} handleShow={props.handleShow}/>
     
     <ProductList  product={product} addToCart={addToCart}/>
+    
     <Footer/>
     </>
   )

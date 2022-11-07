@@ -8,8 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./components/Pages/About";
 import ContactUs from "./components/Pages/ContactUs";
 import ProductDetails from "./components/Pages/productDetails";
+import AuthForm from "./components/Pages/Auth";
 
-function App() {
+function App(props) {
   const [product, setProduct] = useState([
     {
       key:1,
@@ -58,7 +59,7 @@ function App() {
     const data = await responce.json();
     console.log(data);
   }
-
+  
   return (
     <>
       <BrowserRouter>
@@ -82,6 +83,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact-Us"  element={<ContactUs onAddDetails={contectFormHandler}/>}/>
           <Route path="/Store/:productId" element={<ProductDetails product={product} />}/>
+          <Route path="/Auth" element={<AuthForm/>}/>
         </Routes>
       </BrowserRouter>
     </>
