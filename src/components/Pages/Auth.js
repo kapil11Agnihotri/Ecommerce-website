@@ -1,23 +1,19 @@
-
-import { useState, useRef,useContext } from "react";
+import { useState, useRef, useContext } from "react";
 
 import AuthContext from "../../store/auth-context";
 import { useNavigate } from "react-router-dom";
 
-
 import classes from "./AuthForm.module.css";
-import Footer from "../Footer";
 
 const AuthForm = () => {
- const history=useNavigate()
+  const history = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const authCtx=useContext(AuthContext)
- 
+  const authCtx = useContext(AuthContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -61,10 +57,8 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken)
-      history('/store')
-     
-        
+        authCtx.login(data.idToken);
+        history("/store");
       })
       .catch((err) => {
         alert(err.message);
@@ -72,39 +66,35 @@ const AuthForm = () => {
   };
 
   return (
-    <><div className={classes.generics}>The Generics</div>
-    <section className={classes.auth}>
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
-      <form onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" required ref={emailInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="password">Your Password</label>
-          <input
-            type="password"
-            id="password"
-            required
-            ref={passwordInputRef}
-          />
-        </div>
-        <div className={classes.actions}>
-          {!isLoading && (
-            <button>{isLogin ? "Login" : "Create Account"}</button>
-          )}
-          {isLoading && <p>Sending Request....</p>}
-          <button
-            type="button"
-            className={classes.toggle}
-            
-          >
-            {isLogin ? "Create new account" : "Login with existing account"}
-          </button>
-        </div>
-      </form>
-    </section>
-    
+    <>
+      <div className={classes.generics}>The Generics</div>
+      <section className={classes.auth}>
+        <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+        <form onSubmit={submitHandler}>
+          <div className={classes.control}>
+            <label htmlFor="email">Your Email</label>
+            <input type="email" id="email" required ref={emailInputRef} />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor="password">Your Password</label>
+            <input
+              type="password"
+              id="password"
+              required
+              ref={passwordInputRef}
+            />
+          </div>
+          <div className={classes.actions}>
+            {!isLoading && (
+              <button>{isLogin ? "Login" : "Create Account"}</button>
+            )}
+            {isLoading && <p>Sending Request....</p>}
+            <button type="button" className={classes.toggle}>
+              {isLogin ? "Create new account" : "Login with existing account"}
+            </button>
+          </div>
+        </form>
+      </section>
     </>
   );
 };
