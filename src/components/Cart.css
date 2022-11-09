@@ -1,0 +1,25 @@
+.cart{
+    display: flex;
+   
+}
+.image{
+    height: 59px;
+    margin: 5px;
+}
+.title{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.quantity{
+    margin: 25px;
+}
+.price{
+    margin: 25px;
+}
+.button{
+    margin: 25px;
+    height: 25px;
+    width: 25px;
+}

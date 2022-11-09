@@ -9,13 +9,13 @@ const About = () => {
     <>
     <Header/>
     <div className="about"><h1 className="h1">About</h1>
-      <p>
+      <p className="para">
         Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
         sorrows, hates no prosecutors will unfold in the enduring of which were
         born in it? Often leads smallest mistake some pain main responsibilities
         are to stand for the right builder of pleasure, accepted explain up to
         now. , The things we are accusing of these in the explication of the
-        truth receives from the flattery of her will never be the trouble and
+       <img src="	https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" className="img" alt='musicArtist'/> truth receives from the flattery of her will never be the trouble and
         they are refused to the pleasures and the pleasures of the pain, explain
         the treatment of excepturi of the blessed sufferings. I never said will
         unfold in him receives at another time he may please the one that those

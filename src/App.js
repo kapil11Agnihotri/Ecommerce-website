@@ -10,14 +10,15 @@ import ContactUs from "./components/Pages/ContactUs";
 import ProductDetails from "./components/Pages/productDetails";
 import AuthForm from "./components/Pages/Auth";
 import AuthContext from "./store/auth-context";
-import { Switch } from "react-router-dom";
+
+
 
 function App(props) {
  
   const authCtx=useContext(AuthContext)
   const isLoggedIn=authCtx.isLoggedIn
 
-  const [product, setProduct] = useState([
+  const product=[
     {
       key: 1,
       title: "Colors",
@@ -42,7 +43,7 @@ function App(props) {
       price: 100,
       url: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
     },
-  ]);
+  ];
 
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
@@ -68,6 +69,7 @@ function App(props) {
 
   return (
     <>
+    
       <BrowserRouter>
         <Routes>
           isLoggedIn && <Route path="/" element={<Home />} />
@@ -85,7 +87,7 @@ function App(props) {
           {isLoggedIn &&
           <Route
             path="/cartList"
-            element={<CartList cart={cart} handleShow={handleShow} />}
+            element={<CartList key={Math.random()} cart={cart} ProductArr={product}/>}
           />}
           {isLoggedIn &&<Route path="/About" element={<About />} />}
           {isLoggedIn && <Route
@@ -100,6 +102,7 @@ function App(props) {
           
         </Routes>
       </BrowserRouter>
+      
     </>
   );
 }

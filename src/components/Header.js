@@ -9,65 +9,37 @@ function Header(props) {
   return (
     <div>
       <div className="flex shopping-card">
-        <Link to="/">
-          <div>HOME</div>
-        </Link>
+        <Link to="/">HOME</Link>
 
         {isLoggedIn ? (
-          <Link to="/Store">
-            {" "}
-            <div onClick={() => props.handleShow(false)}>STORE</div>
-          </Link>
+          <Link to="/Store"> STORE</Link>
         ) : (
-          <Link to="/Auth">
-            {" "}
-            <div onClick={() => props.handleShow(false)}>STORE</div>
-          </Link>
+          <Link to="/Auth"> STORE</Link>
         )}
 
         {isLoggedIn ? (
-          <Link to="/About">
-            {" "}
-            <div>ABOUT</div>
-          </Link>
+          <Link to="/About"> ABOUT</Link>
         ) : (
-          <Link to="/Auth">
-            {" "}
-            <div>ABOUT</div>
-          </Link>
+          <Link to="/Auth"> ABOUT</Link>
         )}
         <Link to="/Auth">
           {""}
-          <div>Login</div>
+          Login
         </Link>
         {isLoggedIn ? (
-          <Link to="/Contact-Us">
-            {" "}
-            <div>Contact Us</div>
-          </Link>
+          <Link to="/Contact-Us"> Contact Us</Link>
         ) : (
-          <Link to="/Auth">
-            {" "}
-            <div>Contact Us</div>
-          </Link>
+          <Link to="/Auth"> Contact Us</Link>
         )}
         {isLoggedIn ? (
           <Link to="/cartList">
-            {" "}
-            <div onClick={() => props.handleShow(true)}>
-              {" "}
-              CART
-              <sup> {props.count} </sup>
-            </div>
+            CART
+            <sup> {props.count} </sup>
           </Link>
         ) : (
           <Link to="/Auth">
-            {" "}
-            <div onClick={() => props.handleShow(true)}>
-              {" "}
-              CART
-              <sup> {props.count} </sup>
-            </div>
+            CART
+            <sup> {props.count} </sup>
           </Link>
         )}
       </div>

@@ -4,16 +4,21 @@ import AuthContext from "../../store/auth-context";
 import { useNavigate } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const AuthForm = () => {
   const history = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  const [isLogin, setIsLogin] = useState(true);
+  
   const [isLoading, setIsLoading] = useState(false);
+  const [isLogin,setIsLogin]=useState(false)
 
-  const authCtx = useContext(AuthContext);
+   const authCtx = useContext(AuthContext);
+  // const isLogin=authCtx.isLoggedIn
+
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -57,7 +62,7 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        authCtx.login(data.idToken,data.email);
         history("/store");
       })
       .catch((err) => {
@@ -67,7 +72,7 @@ const AuthForm = () => {
 
   return (
     <>
-      <div className={classes.generics}>The Generics</div>
+      <Header/>
       <section className={classes.auth}>
         <h1>{isLogin ? "Login" : "Sign Up"}</h1>
         <form onSubmit={submitHandler}>
@@ -89,12 +94,13 @@ const AuthForm = () => {
               <button>{isLogin ? "Login" : "Create Account"}</button>
             )}
             {isLoading && <p>Sending Request....</p>}
-            <button type="button" className={classes.toggle}>
+            <button onClick={()=>{setIsLogin((pre)=>!pre)}} type="button" className={classes.toggle}>
               {isLogin ? "Create new account" : "Login with existing account"}
             </button>
           </div>
         </form>
       </section>
+      <Footer/>
     </>
   );
 };
