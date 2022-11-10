@@ -6,6 +6,10 @@ import AuthContext from "../store/auth-context";
 function Header(props) {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
+  let count=0
+  authCtx.product.forEach((item)=>{
+    count+=Number(item.quantity)
+  })
   return (
     <div>
       <div className="flex shopping-card">
@@ -34,14 +38,17 @@ function Header(props) {
         {isLoggedIn ? (
           <Link to="/cartList">
             CART
-            <sup> {props.count} </sup>
+            {count}
           </Link>
         ) : (
           <Link to="/Auth">
             CART
-            <sup> {props.count} </sup>
+            <div >{count}</div>
           </Link>
+          
         )}
+        
+        
       </div>
       <div className="generics">The Generics</div>
     </div>

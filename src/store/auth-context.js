@@ -13,7 +13,7 @@ const AuthContext = React.createContext({
 
 export const AuthContextProvider = (props) => {
   const crudCrudUrl =
-    "https://crudcrud.com/api/2ce0a8dbf8e44814996eec57231c21a8";
+    "https://crudcrud.com/api/5c87b0af40954fa68366c59ecdc11b9e";
   const initialToken = localStorage.getItem("token");
   const userEmail = localStorage.getItem("email");
   const [token, setToken] = useState(initialToken);
@@ -26,7 +26,7 @@ export const AuthContextProvider = (props) => {
   const totalAmountHandler = () => {
     let total = 0;
     for (let i = 0; i < Products.length; i++) {
-      total = total + Products[i].price;
+      total = Number(total) + Number(Products[i].totalPrice);
     }
     return setTotalAmount(total);
   };
@@ -61,7 +61,7 @@ export const AuthContextProvider = (props) => {
     for (let i = 0; i < Products.length; i++) {
       if (obj.title === Products[i].title) {
         Products[i].quantity++;
-        Products[i].price = Products[i].price+ obj.startingPrice;
+        Products[i].totalPrice=Products[i].price*Products[i].quantity
 
         console.log(Products);
 
@@ -70,7 +70,8 @@ export const AuthContextProvider = (props) => {
           method: "PUT",
           body: JSON.stringify({
             title: obj.title,
-            price: obj.price,
+            price: Products[i].price,
+            totalPrice:Products[i].totalPrice,
             image: obj.image,
             quantity: Products[i].quantity,
           }),
@@ -90,6 +91,7 @@ export const AuthContextProvider = (props) => {
           title: obj.title,
           price: obj.price,
           image: obj.image,
+          totalPrice:obj.price,
           quantity: obj.quantity,
           id: obj.id,
           email: loginEmail,

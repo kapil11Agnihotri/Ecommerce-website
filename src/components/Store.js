@@ -8,13 +8,15 @@ export const Store = () => {
   const cartCtx = useContext(AuthContext);
 
   const addToCart = (data) => {
+    //const Price=data.price
     const object = {
       id:data.key,
       title: data.title,
       quantity: 1,
       price: data.price,
       image: data.url,
-      startingPrice:Number(data.price)
+      totalPrice:0,
+     // startingPrice:Number(Price)
     };
     cartCtx.addToCart(object);
 

@@ -10,7 +10,7 @@ const Cart = (props) => {
     const object = {
       title:props.title,
       price: props.price,
-      startingPrice:Number(props.price),
+     // startingPrice:Number(props.price),
       image: props.image,
      //quantity:props.quantity,
 
@@ -22,7 +22,7 @@ const Cart = (props) => {
  
 
   const removeFromCart = async () => {
-    const response = await fetch(`https://crudcrud.com/api/2ce0a8dbf8e44814996eec57231c21a8/${ctx.email}/${props.id}`, {
+    const response = await fetch(`https://crudcrud.com/api/5c87b0af40954fa68366c59ecdc11b9e/${ctx.email}/${props.id}`, {
       method: "DELETE",
     });
 
@@ -42,10 +42,10 @@ const Cart = (props) => {
     <div className="cart">
       <img src={props.image} alt="" className="image"/>
       <h3 className="title">{props.title}</h3>
-      <button onClick={removeFromCart} className="button" style={{color:'red'}}>-</button>
       <h4 className="quantity">{props.quantity}</h4>
-      <button onClick={addToCart} className="button" style={{color:'green'}}>+</button>
       <h4 className="price">{props.price}</h4>
+      <button onClick={addToCart} className="button" style={{color:'green'}}>Add</button>
+      <button onClick={removeFromCart} className="button" style={{color:'red'}}>Remove</button>
     </div>
   );
 };

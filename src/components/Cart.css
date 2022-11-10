@@ -3,7 +3,7 @@
    
 }
 .image{
-    height: 59px;
+    height: 86px;
     margin: 5px;
 }
 .title{
@@ -14,12 +14,22 @@
 }
 .quantity{
     margin: 25px;
+    display: flex;
+    align-items: center;
 }
 .price{
     margin: 25px;
+    display: flex;
+    align-items: center;
 }
 .button{
     margin: 25px;
-    height: 25px;
-    width: 25px;
+    border: none;
+  border-radius: 50%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background: grey;
 }
