@@ -22,7 +22,7 @@ const Cart = (props) => {
  
 
   const removeFromCart = async () => {
-    const response = await fetch(`https://crudcrud.com/api/5c87b0af40954fa68366c59ecdc11b9e/${ctx.email}/${props.id}`, {
+    const response = await fetch(`https://crudcrud.com/api/a9a693328527427f8362385c2a7ad944/${ctx.email}/${props.id}`, {
       method: "DELETE",
     });
 

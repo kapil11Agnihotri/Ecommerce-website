@@ -4,7 +4,7 @@ import ProductList from "./ProductList";
 import Footer from "./Footer";
 import AuthContext from "../store/auth-context";
 
-export const Store = () => {
+ const Store = () => {
   const cartCtx = useContext(AuthContext);
 
   const addToCart = (data) => {
@@ -72,3 +72,4 @@ export const Store = () => {
     </>
   );
 };
+ export default Store;
